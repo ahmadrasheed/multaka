@@ -8,7 +8,7 @@
                 <img class="" src="{{asset('img/multaka-logo.png')}}"  width=200px;>
             </div>
 
-            <div  class="col-8 text-center border border-info bg-light p-0 m-0">
+            <div id="titles" class="col-md-8 text-center  p-0 m-0">
                 <p class="title1 m-0">أهلا وسهلاً بكم في ملتقى الكتاب</p>
                 <p class="title2">حيث المطالعة والشاي والموسيقى معاً! </p>
             </div>
