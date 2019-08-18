@@ -241,6 +241,7 @@ footer p{
     .pic{
         height: 75vh;
     }
+
     #last-news{
         font-size: 28px;
         margin-right: 0px;
@@ -248,4 +249,4 @@ footer p{
     }
   }
 
-
+/* End media for Multaka  */
