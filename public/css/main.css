@@ -231,12 +231,12 @@ footer p{
         font-size:20px;
     }
     .title2{
-        
         font-size:20px;
         margin-bottom: 10px;
         margin-left:0px;
         margin-right:0px;
         padding: 0px;
+        border: 1px solid red;
 
     }
 
