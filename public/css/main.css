@@ -6,35 +6,29 @@ html,body{
     margin:0px !important;
     
 }
-#one{
-    position: relative;
-}
+
+
 #section-one{
-  
-    
-}
-#main-title{
-    margin-top:150px;
-    padding:50px;
-   
-    border: .1 px solid #7006ad;
-    
-    
+    margin-top:15%
 }
 
-.title1 ,.title2{color:white; text-shadow: 2px 2px 1px #000000;background:rgba(0,0,0,0.5);}
+
+.title1 , .title2{
+    color:white; 
+    text-shadow: 2px 2px 1px #000000;
+    background:rgba(0,0,0,0.5);
+    
+}
 .title1{
-    font-size: 50px;
-    padding-top:20px;
-    padding-bottom: 20px;
-    margin-top:50px; 
-    margin-bottom:20px;
+    font-size:40px;
+    
+   
 }
 .title2{
-   
     
     display:inline;
 }
+
 
 .bg-purple{
     color:white;
@@ -92,10 +86,7 @@ a.navbar-brand{
     background-color:rgb(181, 64, 248) !important;
 }
 
-.navbar-collapse {
 
-     
-}
 span.navbar-toggler-icon{
     color:forestgreen !important;
     
@@ -142,10 +133,7 @@ span.navbar-toggler-icon{
     
 }
 
-#mycarosul{
 
-   
-}
 #title{
     font-size:22px;
 }
@@ -233,34 +221,31 @@ footer p{
 }
 
 
-
-
-
-
-/* media Queries by ahmad rasheed 2019  */
-/* 
-/* 
-/* 
- */ 
-@media screen and (max-width: 600px) {
-    #myrow{
-        margin-top:100px;
-        height:400px;
+/* media for Multaka  */
+@media only screen and (max-width: 600px) {
+    .title1{
+        display: none;
+        font-size:20px;
     }
-    h1{
-        font-size:30px !important;
-    }
-
-    #think-svg{
-
-        height:150px;
-        width:140px;
+    .title2{
         
+        font-size:20px;
+        margin-bottom: 10px;
     }
 
-    #title{
-        font-size:16px;
-        
+    #section-one{
+        background-color:rgba(0,0,0,0.5);
+        padding-bottom: 50px;
     }
-    
-}
+
+    .pic{
+        height: 75vh;
+    }
+    #last-news{
+        font-size: 28px;
+        margin-right: 0px;
+        padding-right: 10px;
+    }
+  }
+
+

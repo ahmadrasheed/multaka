@@ -15,6 +15,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/353ac4e52d.js"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -23,7 +24,7 @@
 <body>
     <div id="app" class="pic myfont">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="http://ahmadiraq.com"><i class="fas fa-pencil-ruler"></i><img src="{{ asset('img/multaka-logo.png') }}" width="100px"> </a>
+            <a class="navbar-brand" href="http://ahmadiraq.com"><img src="{{ asset('img/multaka-logo.png') }}" width="100px"> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -59,5 +60,26 @@
     </div>
 
           @yield('content2')
+
+
+          <footer>
+            <div class="container-fluid">
+              <div class="row ">
+                <div class="col-sm-12 d-flex justify-content-center">
+                    <a href="https://www.facebook.com/pg/BookForumMosul/posts/?ref=page_internal"> <i class="fab  fa-facebook-square"></i> </a>
+                    <a href=""><i class="fab fa-youtube"></i></a>
+                    <a href=""><i class="fas fa-copyright"></i></a>
+                </div>
+        
+              </div>
+              <div class="row mt-2">
+                <div class="col-sm-12 d-flex justify-content-center">
+                    <p class="myfont"> العراق - الموصل - المجموعة الثقافية - ملقتى الكتاب</p>
+                </div>
+                
+              </div>
+            </div>
+        
+          </footer>
 </body>
 </html>

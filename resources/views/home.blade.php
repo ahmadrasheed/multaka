@@ -1,16 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">                  {{-- Start of Container --}}
-    <div id='section-one'>
-        <div id="main-title" class="row">
-            <div class="col-3">
-                <img src="{{asset('img/multaka-logo.png')}}"  width=180px;>
+<div class="container-fluid">                  {{-- Start of Container --}}
+    <div id='section-one' class="">
+        <div id="main-title" class="row d-flex justify-content-center  flex-column flex-md-row align-items-center ">
+            <div class="col-md-3  d-flex flex-column  align-items-center">
+                <img class="" src="{{asset('img/multaka-logo.png')}}"  width=200px;>
             </div>
 
             <div  class="col-9 text-center">
-                <h1 class="title1">أهلا وسهلاً بكم في ملتقى الكتاب</h2>
-                <h2 class="title2">حيث المطالعة والشاي والموسيقى معاً! </h2>
+                <p class="title1">أهلا وسهلاً بكم في ملتقى الكتاب</p>
+                <p class="title2">حيث المطالعة والشاي والموسيقى معاً! </p>
             </div>
             
         </div>
@@ -20,8 +20,8 @@
 @endsection
 
 @section('content2')
-<div id="section-two">
-    <h1 class="myfont text-right py-3 bg-purple"> اخر النشاطات والفعاليات في الملتقى</h1>
+<div id="section-two" class="">
+    <h1 id="last-news"class="myfont text-right py-3 bg-purple"> اخر النشاطات والفعاليات في الملتقى</h1>
     <hr>
         <div class="row">
                 <div class="card col-md-6 mb-3" > {{-- 1 item --}}
