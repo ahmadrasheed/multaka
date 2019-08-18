@@ -8,9 +8,9 @@
                 <img class="" src="{{asset('img/multaka-logo.png')}}"  width=200px;>
             </div>
 
-            <div id="titles" class="col-md-8 text-center  p-0 m-0">
-                <p class="title1 m-0">أهلا وسهلاً بكم في ملتقى الكتاب</p>
-                <p class="title2">حيث المطالعة والشاي والموسيقى معاً! </p>
+            <div id="titles" class=" w-100 col-md-5 text-center d-flex flex-column align-items-center">
+                <p class="title1  mt-5">أهلا وسهلاً بكم في ملتقى الكتاب</p>
+                <p class="title2  mt-2 ">حيث المطالعة والشاي والموسيقى معاً! </p>
             </div>
             
         </div>
