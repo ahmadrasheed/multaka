@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('content')
-<div class="container-fluid p-0 m-0">                  {{-- Start of Container --}}
+@section('bg')
+<div id="bg" class=" d-flex flex-column container-fluid pic">                  {{-- Start of Container --}}
     <div id='section-one' class="">
-        <div id="main-title w-100" class="row d-flex justify-content-center  flex-column flex-md-row align-items-center ">
+        <div id="main-title" class="row d-flex  flex-column align-items-center flex-md-row justify-content-center">
             <div class=" col-md-4   d-flex flex-column  align-items-center align-items-md-end">
                 <img class="" src="{{asset('img/multaka-logo.png')}}"  width=200px;>
             </div>
@@ -19,7 +19,7 @@
 
 @endsection
 
-@section('content2')
+@section('content')
 <div id="section-two" class="">
     <h1 id="last-news"class="myfont text-right py-3 bg-purple"> اخر النشاطات والفعاليات في الملتقى</h1>
     <hr>

@@ -22,8 +22,8 @@
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app" class="pic myfont">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div id="app" class="myfont" style="direction:rtl;">
+        <nav style="direction:rtl !important;" class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="http://ahmadiraq.com"><img src="{{ asset('img/multaka-logo.png') }}" width="100px"> </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -56,30 +56,38 @@
             </div>
           </nav> 
 
+          
+          @yield('bg')
           @yield('content')
-    </div>
+          @yield('posts')
+          @yield('create')
 
-          @yield('content2')
 
 
           <footer>
-            <div class="container-fluid">
-              <div class="row ">
-                <div class="col-sm-12 d-flex justify-content-center">
-                    <a href="https://www.facebook.com/pg/BookForumMosul/posts/?ref=page_internal"> <i class="fab  fa-facebook-square"></i> </a>
-                    <a href=""><i class="fab fa-youtube"></i></a>
-                    <a href=""><i class="fas fa-copyright"></i></a>
+              <div class="container-fluid">
+                <div class="row ">
+                  <div class="col-sm-12 d-flex justify-content-center">
+                      <a href="https://www.facebook.com/pg/BookForumMosul/posts/?ref=page_internal"> <i class="fab  fa-facebook-square"></i> </a>
+                      <a href=""><i class="fab fa-youtube"></i></a>
+                      <a href=""><i class="fas fa-copyright"></i></a>
+                  </div>
+          
                 </div>
-        
-              </div>
-              <div class="row mt-2">
-                <div class="col-sm-12 d-flex justify-content-center">
-                    <p class="myfont"> العراق - الموصل - المجموعة الثقافية - ملقتى الكتاب</p>
+                <div class="row mt-2">
+                  <div class="col-sm-12 d-flex justify-content-center">
+                      <p class="myfont"> العراق - الموصل - المجموعة الثقافية - ملقتى الكتاب</p>
+                  </div>
+                  
                 </div>
-                
               </div>
-            </div>
-        
-          </footer>
+          
+            </footer>
+    </div>
+
+          
+
+
+
 </body>
 </html>

@@ -5,11 +5,12 @@ html,body{
     padding:0px !important;
     margin:0px !important;
     
+    
 }
 
 
 #section-one{
-    margin-top:15%
+    margin-top:200px;
 
 }
 #main-title{
@@ -68,7 +69,7 @@ nav.navbar{
 }
 .pic { 
     
-    direction:rtl;
+    
     width: 100vw;
     /* The image used */
     background-image: url("../img/multaka-bg1.jpg");
@@ -212,6 +213,9 @@ span.navbar-toggler-icon{
 /* footer  */
 
 footer{
+    
+    bottom: 0;
+    width: 100vw;
     padding-top:50px;
     height:200px;
     background-color:rgba(146, 13, 223, 1);
