@@ -15,7 +15,7 @@
                           <div class="col-md-12 border border-info">
                             <div class="card-body ">
                               <h5 class="card-title text-center">{{$post->title}}</h5>
-                              <div class="card-text">
+                              <div id="article"class="card-text">
                                 
                                  {!! $post->body!!}
                               </div>
