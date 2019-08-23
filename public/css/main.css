@@ -89,6 +89,7 @@ nav.navbar{
   }
 #article-show img{
     max-width: 80%;
+    text-align: center;
 }
 
 a.navbar-brand{
