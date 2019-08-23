@@ -2,10 +2,10 @@
 
 @section('content')
 <div id="section-two" class="my-3 text-right">
-    <h1 id="last-news"class="myfont  my-4 d-inline bg-purple"> اخر النشاطات والفعاليات في الملتقى</h1>
+    <h2 id="last-news" class="myfont  my-4 d-inline bg-purple"> اخر النشاطات والفعاليات في الملتقى</h2>
     <hr>
   
-        <div id="article-show" class="row">
+        <div id="article-show" class="row d-flex justify-content-center">
            
                 <div class="card col-sm-8 mb-3 border border-alert " > 
                         <div class="row no-gutters border border-warning">
