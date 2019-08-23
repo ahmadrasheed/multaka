@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Post;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +23,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // i'ts not used I may delete it later
+        $posts=Post::all();
+        //dd($posts);
+        return view('visitor.home',compact('posts'));
+        
     }
 }

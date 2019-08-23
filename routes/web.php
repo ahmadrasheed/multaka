@@ -17,5 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
 Route::resource('posts', 'PostController');
+
+
+
+// for visitor    (not admin)
+Route::get('/', 'VisitorController@index')->name('home');
+Route::get('show/{id}','VisitorController@show')->name('visitor.show.post');
+//

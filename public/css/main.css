@@ -87,7 +87,9 @@ nav.navbar{
     padding:0px;
     
   }
-
+#article-show img{
+    max-width: 80%;
+}
 
 a.navbar-brand{
     font-size:40px;

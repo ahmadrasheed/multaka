@@ -15,6 +15,7 @@ class PostController extends Controller
     public function index()
     {
         $posts=Post::all();
+        //dd($posts);
         return view('posts.index',compact('posts'));
     }
 
@@ -36,18 +37,63 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+       /*  $validatedData = $request->validate([
             'title' => 'required',
            // 'amount' => 'required|numeric',
            'image' => 'required',
             'body' => 'required',
         
+        ]); */
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required',
+            //'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+ 
         ]);
+        /* to handel the image and move it to the public/article-img/  path   */
+        $imageName = time().'.'.request()->image->getClientOriginalExtension();
+        request()->image->move(public_path('articles-img'), $imageName);
+        /*              */
+        
+        $detail=$request->input('body');
+        //$image=$request->input('image');
+        $title=$request->input('title');
+        $short=$request->input('short');
+ 
+            /* this is necessary for uploading images inside the textarea using summernote editor  */
+        //$dom->loadHTML(mb_convert_encoding($profile, 'HTML-ENTITIES', 'UTF-8'));
+        $dom = new \DomDocument();
+        //$dom->loadHtml($detail, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD); 
+        $dom->loadHTML(mb_convert_encoding($detail, 'HTML-ENTITIES', 'UTF-8'));   
+        $images = $dom->getElementsByTagName('img');
+ 
+                foreach($images as $k => $img){
+        
+                    $data = $img->getAttribute('src');
+                    list($type, $data) = explode(';', $data);
+                    list(, $data)      = explode(',', $data);
+                    $data = base64_decode($data);
+                    $image_name= "/upload/" . time().$k.'.png';
+                    $path = public_path() . $image_name;
+                    file_put_contents($path, $data);
+                    $img->removeAttribute('src');
+                    $img->setAttribute('src', $image_name);
 
-        Post::create($request->all());
+                }
+
+        
+        $post = new Post;
+        
+
+        $post->body=$detail = @$dom->saveHTML();
+        $post->title=$title;
+        $post->short=$short;
+        $post->image=$imageName; // this is the article feature image, this is not inside the article.
+        $post->save();
+        //Post::create($request->all());
 
         return redirect('/posts');
-
+// ******************* please follow this tutorial:https://www.kerneldev.com/2018/01/11/using-summernote-wysiwyg-editor-with-laravel/
     }
 
     /**
