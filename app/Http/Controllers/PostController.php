@@ -73,8 +73,8 @@ class PostController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $inside_image_name=  time().$k.'.png';
-                    $inside_image_path = public_path('upload/') . $inside_image_name;
+                    $inside_image_name= 'upload/'. time().$k.'.png';
+                    $inside_image_path = public_path() . $inside_image_name;
                     file_put_contents($inside_image_path , $data);
                     $img->removeAttribute('src');
                     $img->setAttribute('src', $inside_image_name);
@@ -155,7 +155,7 @@ class PostController extends Controller
     {
         $post = Post::find($id);
         File::delete(public_path('articles-img/').$post->image);
-        File::delete(public_path('upload/').$post->inside_image);
+        File::delete(public_path().$post->inside_image);
         $post->delete();
 
         return redirect('/posts')->with('success', 'Post deleted!');
