@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use File;
 
 class PostController extends Controller
 {
@@ -47,10 +48,10 @@ class PostController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'body' => 'required',
-            //'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
  
         ]);
-        /* to handel the image and move it to the public/article-img/  path   */
+        /* to handel the outside image and move it to the public/article-img/  path   */
         $imageName = time().'.'.request()->image->getClientOriginalExtension();
         request()->image->move(public_path('articles-img'), $imageName);
         /*              */
@@ -60,10 +61,9 @@ class PostController extends Controller
         $title=$request->input('title');
         $short=$request->input('short');
  
-            /* this is necessary for uploading images inside the textarea using summernote editor  */
+            /* this is inside images which is necessary for uploading images inside the textarea using summernote editor  */
         //$dom->loadHTML(mb_convert_encoding($profile, 'HTML-ENTITIES', 'UTF-8'));
         $dom = new \DomDocument();
-        //$dom->loadHtml($detail, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD); 
         $dom->loadHTML(mb_convert_encoding($detail, 'HTML-ENTITIES', 'UTF-8'));   
         $images = $dom->getElementsByTagName('img');
  
@@ -73,11 +73,11 @@ class PostController extends Controller
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $image_name= "/upload/" . time().$k.'.png';
-                    $path = public_path() . $image_name;
-                    file_put_contents($path, $data);
+                    $inside_image_name=  time().$k.'.png';
+                    $inside_image_path = public_path('upload/') . $inside_image_name;
+                    file_put_contents($inside_image_path , $data);
                     $img->removeAttribute('src');
-                    $img->setAttribute('src', $image_name);
+                    $img->setAttribute('src', $inside_image_name);
 
                 }
 
@@ -89,6 +89,7 @@ class PostController extends Controller
         $post->title=$title;
         $post->short=$short;
         $post->image=$imageName; // this is the article feature image, this is not inside the article.
+        $post->inside_image=$inside_image_name;
         $post->save();
         //Post::create($request->all());
 
@@ -153,8 +154,17 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
+        File::delete(public_path('articles-img/').$post->image);
+        File::delete(public_path('upload/').$post->inside_image);
         $post->delete();
 
         return redirect('/posts')->with('success', 'Post deleted!');
+        
+        // $image_name= "/upload/" . time().$k.'.png';
+        // $path = public_path() . $image_name;
+        // file_put_contents($path, $data);
+        
+
+
     }
 }
