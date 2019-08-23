@@ -93,7 +93,7 @@ nav.navbar{
 #article-show img{
     max-width: 80%;
     text-align: center;
-    border:1px red dotted;
+    border:2px red dotted;
 }
 
 a.navbar-brand{
