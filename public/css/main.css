@@ -266,6 +266,7 @@ footer p{
     .card-text  p{
         color:red !important;
         padding:10px;
+        width: 95%;
         text-overflow: ellipsis;
         word-wrap: break-word;
 
