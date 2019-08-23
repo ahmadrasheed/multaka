@@ -87,6 +87,9 @@ nav.navbar{
     padding:0px;
     
   }
+  #article-show {
+      overflow: hidden;
+  }
 #article-show img{
     max-width: 80%;
     text-align: center;
