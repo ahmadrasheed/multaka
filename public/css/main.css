@@ -261,18 +261,18 @@ footer p{
     }
 
     #article-show {
-        
+        overflow-wrap: normal;
     }
     .card-text  p{
         
-        padding:1px;
+        padding:5px;
         width: 95% !important;
         text-overflow: ellipsis;
         word-wrap: break-word;
 
     }
     #article{
-        width: 98vw !important;
+        width: 90vw !important;
     }
   #article-show img{
       max-width: 90%;
