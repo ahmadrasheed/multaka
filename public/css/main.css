@@ -267,6 +267,7 @@ footer p{
         color:red !important;
         padding:10px;
         text-overflow: ellipsis;
+        word-wrap: break-word;
 
     }
   #article-show img{
