@@ -15,10 +15,10 @@
                           <div class="col-md-12 border border-info">
                             <div class="card-body ">
                               <h5 class="card-title text-center">{{$post->title}}</h5>
-                              <p class="card-text">
+                              <div class="card-text">
                                 
                                  {!! $post->body!!}
-                              </p>
+                              </div>
                               <p class="card-text"><small class="text-muted">Last updated {!! $post->updated_at!!}</small></p>
                             </div>
                           </div>

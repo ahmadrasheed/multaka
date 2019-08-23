@@ -263,8 +263,14 @@ footer p{
     #article-show {
         overflow-wrap: normal;
     }
+    .card-text  p{
+        color:red !important;
+        padding:10px;
+        text-overflow: ellipsis;
+
+    }
   #article-show img{
-      max-width: 50%;
+      max-width: 90%;
       text-align: center;
       border:2px red dotted;
   }
@@ -284,10 +290,23 @@ footer p{
     }
 
     #last-news{
-        font-size: 25px;
+        font-size: 20px;
         margin-right: 0px;
         padding-right: 10px;
     }
+
+
+
+
+
+
+    footer p{
+        color:whitesmoke;
+        font-size:14px;
+    }
   }
+
+
+
 
 /* End media for Multaka  */
