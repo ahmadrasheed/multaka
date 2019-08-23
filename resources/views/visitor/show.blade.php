@@ -7,12 +7,12 @@
   
         <div id="article-show" class="row d-flex justify-content-center">
            
-                <div class="card col-sm-8 mb-3 border border-alert " > 
-                        <div class="row no-gutters border border-warning">
+                <div class="card col-sm-8 mb-3" > 
+                        <div class="row no-gutters">
                           {{-- <div class="col-md-6" style="max-width:520px; max-height:250px;">
                             <img src="{{asset('articles-img').'/'.$post->image}}"  height="100%" class="card-img" alt="...">
                           </div> --}}
-                          <div class="col-md-12 border border-info">
+                          <div class="col-md-12">
                             <div class="card-body ">
                               <h5 class="card-title text-center">{{$post->title}}</h5>
                               <div id="article"class="card-text">
@@ -23,7 +23,10 @@
                             </div>
                           </div>
                         </div>
-                      </div>       
+                        <a href="{{ URL::previous() }}" class="btn btn-link btn-lg btn-inline ">
+                          <h3>Back</h3></a> 
+                      </div>    
+                      
               
           </div> {{-- End Row --}}            
         

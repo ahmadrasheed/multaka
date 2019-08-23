@@ -32,7 +32,7 @@
         @foreach($posts as $post)
         <tr>
             <td>{{$post->id}}</td>
-            <td>{{$post->title}}</td>
+        <td><a href="{{route('visitor.show.post',$post->id)}}">{{$post->title}}</a></td>
             <td>{{$post->image}}</td>
           
             <td>

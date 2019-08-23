@@ -1,13 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
-                <div class="card-body">
+                <div class="card-body" style="direction:ltr !important;">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -62,6 +62,9 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                                <a href="{{route('register')}}" class="btn btn-defualt">
+                                        Sign Up? 
+                                </a>
                             </div>
                         </div>
                     </form>
