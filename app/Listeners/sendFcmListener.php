@@ -29,7 +29,7 @@ class sendFcmListener
      */
     public function handle(newPostEvent $event)
     {
-        // dd("from listener");
+        dd("from listener" +$post);
         Fcm::send_notification($event->post);
     }
 }
