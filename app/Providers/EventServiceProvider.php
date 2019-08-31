@@ -15,8 +15,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        Registered::class => [
-            SendEmailVerificationNotification::class,
+        \App\events\newPostEvent::class => [
+            \App\Listeners\sendFcmListener::class,
         ],
     ];
 

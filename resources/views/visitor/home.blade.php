@@ -51,6 +51,11 @@
           </div> {{-- End Row --}}            
         
     </div>
+    <div class="row d-flex justify-content-center ">
 
+      <div class="col-3">
+        {{ $posts->links() }}
 
+      </div>
+    </div>
 @endsection

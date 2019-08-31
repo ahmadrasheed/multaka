@@ -99,7 +99,7 @@
                 </div>
                 <div class="row mt-2">
                   <div class="col-sm-12 d-flex justify-content-center">
-                      <p class="myfont"> العراق - الموصل - المجموعة الثقافية - ملقتى الكتاب</p>
+                      <p class="myfont"> العراق - الموصل - المجموعة الثقافية - ملتقى الكتاب</p>
                   </div>
                   
                 </div>

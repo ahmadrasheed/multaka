@@ -8,7 +8,8 @@ use App\Post;
 class VisitorController extends Controller
 {
     public function index(){
-        $posts=Post::all();
+        $posts=Post::paginate(3);
+        
         return view('visitor.home',compact('posts'));
     }
 

@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\Fcm;
 use File;
+use App\events\newPostEvent;
 
 class PostController extends Controller
 {
@@ -67,13 +69,15 @@ class PostController extends Controller
         $dom->loadHTML(mb_convert_encoding($detail, 'HTML-ENTITIES', 'UTF-8'));   
         $images = $dom->getElementsByTagName('img');
  
+        // هنا لقد افترضت وجود صورة واحدة فقط داخل المقالة
+        // المفروض يتم عمل مصفوفة لحفظ اسماء الصور في حالة وجود اكثر من صورة
                 foreach($images as $k => $img){
         
                     $data = $img->getAttribute('src');
                     list($type, $data) = explode(';', $data);
                     list(, $data)      = explode(',', $data);
                     $data = base64_decode($data);
-                    $inside_image_name= 'upload/'. time().$k.'.png';
+                    $inside_image_name= '/upload/'. time().$k.'.png';
                     $inside_image_path = public_path() . $inside_image_name;
                     file_put_contents($inside_image_path , $data);
                     $img->removeAttribute('src');
@@ -84,14 +88,23 @@ class PostController extends Controller
         
         $post = new Post;
         
-
+// المفروض عمل لوب في حالة وجود اكثر من مصمفوفة داخل المقالة وذلك لحفظ اسماء جميع الصور الموجودة في المصفوفة
         $post->body=$detail = @$dom->saveHTML();
         $post->title=$title;
         $post->short=$short;
         $post->image=$imageName; // this is the article feature image, this is not inside the article.
-        $post->inside_image=$inside_image_name;
+        if(isset($inside_image_name)){$post->inside_image=$inside_image_name;}
         $post->save();
         //Post::create($request->all());
+
+        
+// to send FCM notification to andoird devices 
+        event(new newPostEvent($post));     
+        //Fcm::send_notification ($post);
+
+// End of send FCM
+
+        //dump("new post has added");
 
         return redirect('/posts');
 // ******************* please follow this tutorial:https://www.kerneldev.com/2018/01/11/using-summernote-wysiwyg-editor-with-laravel/
@@ -167,4 +180,11 @@ class PostController extends Controller
 
 
     }
-}
+
+    
+
+
+
+
+
+}// End of Class
