@@ -17,6 +17,7 @@ class PostController extends Controller
      */
     public function index()
     {
+        phpinfo();
         $posts=Post::all();
         //dd($posts);
         return view('posts.index',compact('posts'));
