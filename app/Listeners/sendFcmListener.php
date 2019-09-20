@@ -9,7 +9,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 
 use App\Fcm;
 
-class sendFcmListener
+class sendFcmListener implements  ShouldQueue
 {
     /**
      * Create the event listener.
@@ -28,8 +28,9 @@ class sendFcmListener
      * @return void
      */
     public function handle(newPostEvent $event)
-    {
-        dd("from listener" +$post);
+    {   
+        //sleep(100);
+         //dd("from listener");
         Fcm::send_notification($event->post);
     }
 }

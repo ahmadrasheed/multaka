@@ -50,9 +50,13 @@ class Fcm extends Model
        $result = curl_exec($ch);           
        if ($result === FALSE) {
            die('Curl failed: ' . curl_error($ch));
+           dd("something error from FCM class");
        }
        curl_close($ch);
+
+       //dd("notification done from fcm class");
        return $result;
+
 	}
 
 
